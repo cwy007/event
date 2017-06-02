@@ -8,4 +8,7 @@ class User < ApplicationRecord
     self.email.split("@").first
   end
 
+  has_many :memberships
+  has_many :groups, :through => "memberships"  # 这里用groups，所以不用指定source
+
 end
