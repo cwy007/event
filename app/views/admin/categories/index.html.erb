@@ -1,0 +1,20 @@
+<h1>Categoris List</h1>
+<%= link_to "New Category", new_admin_category_path, class: "btn btn-default" %>
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Actions</th>
+  </tr>
+  <% @categories.each do |category| %>
+  <tr>
+    <td>
+      <%= category.name %>
+    </td>
+    <td>
+      <%= link_to "Edit", edit_admin_category_path(category), class: "btn btn-default btn-sm" %>
+      |
+      <%= link_to "Delete", admin_category_path(category), method: :delete, class: "btn btn-default btn-sm" %>
+    </td>
+  </tr>
+  <% end %>
+</table>
