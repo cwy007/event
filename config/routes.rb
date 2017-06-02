@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     root "events#index"
     resources :events
     resources :categories
+    resources :users
   end
 
   resource :user
