@@ -21,6 +21,9 @@ gem "select2-rails"
 
 gem "rails-erd"
 
+gem "nested_form_fields"
+
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
