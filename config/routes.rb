@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :events
     resources :categories
     resources :users
+    resources :groups
   end
 
   resource :user

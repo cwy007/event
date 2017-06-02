@@ -1,0 +1,12 @@
+<h1>New Group</h1>
+<%= form_for [:admin,@group] do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "提交", class: "btn btn-default" %>
+    <%= link_to "Cancel", admin_groups_path, class: "btn btn-default" %>
+  </div>
+<% end %>

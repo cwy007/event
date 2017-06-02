@@ -1,0 +1,20 @@
+<h1>Group List</h1>
+<div class="pull-right">
+  <%= link_to "New Group", new_admin_group_path, class: "btn btn-default" %>
+</div>
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Actions</th>
+  </tr>
+  <% @groups.each do |group| %>
+    <tr>
+      <td><%= group.name %></td>
+      <td>
+        <%= link_to "Edit", edit_admin_group_path(group), class: "btn btn-default" %>
+        |
+        <%= link_to "Delete", admin_group_path(group), method: :delete, class: "btn btn-default" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
