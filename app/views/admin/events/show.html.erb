@@ -4,4 +4,5 @@
   <%= link_to "打開前台", event_path(@event), :target => "_blank", :class => "btn btn-primary" %>
 </p>
 
+<h2><%= @event.category.try(:name)%></h2>
 <%= simple_format @event.description %>
