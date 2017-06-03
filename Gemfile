@@ -25,6 +25,8 @@ gem "nested_form_fields"
 
 gem 'bootstrap-datepicker-rails' #实作📅效果
 
+gem 'ckeditor'
+
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
