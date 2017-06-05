@@ -9,6 +9,7 @@ class Registration < ApplicationRecord
 
   before_validation :generate_uuid, :on => :create
 
+
   def to_param
     self.uuid
   end
@@ -17,7 +18,16 @@ class Registration < ApplicationRecord
   validates_presence_of :name, :email, :cellphone, :if => :should_validate_basic_data?
   validates_presence_of :name, :email, :cellphone, :bio, :if => :should_validate_all_data?
 
+  validate :check_event_status, :on => :create
+
+
   protected
+
+  def check_event_status
+    if self.event.status == "draft"
+      errors.add(:base, "活动尚未开始报名")
+    end
+  end
 
   def generate_uuid
     self.uuid = SecureRandom.uuid
@@ -30,4 +40,6 @@ class Registration < ApplicationRecord
   def should_validate_all_data?
     current_step == 3 || status == "confirmed"
   end
+
+
 end
