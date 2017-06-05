@@ -2,29 +2,43 @@
 
 <h2>Step 2</h2>
 
-<% if @registration.errors.any? %>
-  <ul>
-    <% @registration.errors.full_messages.each do |error| %>
-      <li><%= error %></li>
-    <% end %>
-  </ul>
-<% end %>
-
 <%= form_for @registration, :url => update_step2_event_registration_path(@event, @registration) do |f| %>
 
-  <div class="form-group">
-    <%= f.label :name %>
+  <div class="form-group <%= (f.object.errors[:name].any?)? "has-error" : "" %>">
+    <%= f.label :name, "姓名", :class => "control-label" %>
     <%= f.text_field :name, :class => "form-control" %>
+
+    <% if f.object.errors[:name] %>
+      <span class="help-block">
+        <%= safe_join(f.object.errors[:name], "、") %>
+      </span>
+    <% end %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :email %>
+  <div class="form-group <%= (f.object.errors[:email].any?)? "has-error" : "" %>">
+    <%= f.label :email, "E-mail", :class => "control-label" %>
     <%= f.email_field :email, :class => "form-control" %>
+
+    <% if f.object.errors[:email] %>
+      <span class="help-block">
+        <%= safe_join(f.object.errors[:email], "、") %>
+      </span>
+    <% end %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :cellphone %>
+  <!-- has-error 和 help-block 是 Bootstrap 提供的样式，这里配合使用 -->
+  <div class="form-group <%= (f.object.errors[:cellphone].any?)? "has-error" : "" %>">
+    <!-- 这里的“电话”会替换原有的cellphone,作为标签 -->
+    <%= f.label :cellphone, "电话", :class => "control-label" %>
     <%= f.text_field :cellphone, :class => "form-control" %>
+
+    <!-- Use the .help-block class to add a block level help text in forms -->
+    <% if f.object.errors[:cellphone] %>
+      <span class="help-block">
+        <!-- safe_join 可以将数组f.object.errors[:cellphone]中的信息组合成一个字串，“、”在这里是作为分隔符用的，也可以改成其他形式，eg: "$" -->
+        <%= safe_join(f.object.errors[:cellphone], "、") %>
+      </span>
+    <% end %>
   </div>
 
   <div class="form-group">
