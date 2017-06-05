@@ -31,6 +31,7 @@ gem 'ranked-model'  #排序
 
 gem 'awesome_rails_console'
 
+gem 'jquery-ui-rails'
 
 
 # Use sqlite3 as the database for Active Record
