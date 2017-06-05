@@ -8,7 +8,7 @@
 
   <div class="form-group <%= (f.object.errors[:name].any?)? "has-error" : "" %>">
     <%= f.label :name, "姓名", :class => "control-label" %>
-    <%= f.text_field :name, :class => "form-control" %>
+    <%= f.text_field :name, :class => "form-control", :required => true, :autofocus => true %>
 
     <% if f.object.errors[:name] %>
       <span class="help-block">
@@ -19,7 +19,7 @@
 
   <div class="form-group <%= (f.object.errors[:email].any?)? "has-error" : "" %>">
     <%= f.label :email, "E-mail", :class => "control-label" %>
-    <%= f.email_field :email, :class => "form-control" %>
+    <%= f.email_field :email, :class => "form-control", :required => true %>
 
     <% if f.object.errors[:email] %>
       <span class="help-block">
@@ -32,7 +32,7 @@
   <div class="form-group <%= (f.object.errors[:cellphone].any?)? "has-error" : "" %>">
     <!-- 这里的“电话”会替换原有的cellphone,作为标签 -->
     <%= f.label :cellphone, "电话", :class => "control-label" %>
-    <%= f.text_field :cellphone, :class => "form-control" %>
+    <%= f.text_field :cellphone, :class => "form-control", :required => true %>
 
     <!-- Use the .help-block class to add a block level help text in forms -->
     <% if f.object.errors[:cellphone] %>
