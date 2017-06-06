@@ -35,6 +35,7 @@ gem 'jquery-ui-rails'
 
 gem 'annotate'
 
+gem 'kaminari'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
