@@ -34,9 +34,9 @@ class Admin::EventsController < AdminController
                'rgba(153, 102, 255, 0.2)',
                'rgba(255, 159, 64, 0.2)'
                ]
- 
+
      ticket_names = @event.tickets.map { |t| t.name }
- 
+
      @data1 = {
          labels: ticket_names,
          datasets: [{
@@ -44,6 +44,16 @@ class Admin::EventsController < AdminController
            data: @event.tickets.map{ |t| t.registrations.count },
            backgroundColor: colors,
            borderWidth: 1
+         }]
+     }
+
+     @data2 = {
+       labels: ticket_names,
+       datasets: [{
+         label: '# of Amount',
+         data: @event.tickets.map{ |t| t.registrations.by_status("confirmed").count * t.price },
+         backgroundColor: colors,
+         borderWidth: 1
          }]
      }
 
