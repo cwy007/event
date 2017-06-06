@@ -60,5 +60,6 @@ class Registration < ApplicationRecord
     current_step == 3 || status == "confirmed"
   end
 
-
+  scope :by_status, -> (s){ where( :status => s )}
+  scope :by_ticket, -> (t){ where( :ticket_id => t )}
 end
