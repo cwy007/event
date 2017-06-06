@@ -35,7 +35,9 @@ gem 'jquery-ui-rails'
 
 gem 'annotate'
 
-gem 'kaminari'
+gem 'kaminari'  #分页用
+
+gem 'ransack'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
