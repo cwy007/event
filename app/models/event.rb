@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: events
+#
+#  id          :integer          not null, primary key
+#  name        :string
+#  description :text
+#  user_id     :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  friendly_id :string
+#  status      :string           default("draft")
+#  category_id :integer
+#  row_order   :integer
+#
+
 class Event < ApplicationRecord
 
   include RankedModel

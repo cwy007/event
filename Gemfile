@@ -33,6 +33,8 @@ gem 'awesome_rails_console'
 
 gem 'jquery-ui-rails'
 
+gem 'annotate'
+
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

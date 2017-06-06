@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: registrations
+#
+#  id         :integer          not null, primary key
+#  status     :string           default("pending")
+#  uuid       :string
+#  event_id   :integer
+#  ticket_id  :integer
+#  user_id    :integer
+#  name       :string
+#  email      :string
+#  cellphone  :string
+#  website    :string
+#  bio        :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Registration < ApplicationRecord
   STATUS = ["pending", "confirmed"]
   validates_inclusion_of :status, :in => STATUS
