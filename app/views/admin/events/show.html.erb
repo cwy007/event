@@ -7,3 +7,40 @@
 
 <h2><%= @event.category.try(:name)%></h2>
 <%= sanitize @event.description %>
+
+<!-- <canvas id="myChart1" width="400" height="200"></canvas>
+<script>
+  var ctx1 = document.getElementById("myChart1");
+  var myChart1 = new Chart(ctx1, {
+    type: 'bar',
+    data: <%= raw @data1.to_json %>,
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero:true
+          }
+        }]
+      }
+    }
+  })
+</script> -->
+   <canvas id="myChart1" width="400" height="200"></canvas>
+   <script>
+   var ctx1 = document.getElementById("myChart1");
+   var myChart1 = new Chart(ctx1, {
+       type: 'bar',
+       data: <%= raw @data1.to_json %>,
+       options: {
+           scales: {
+               yAxes: [{
+                   ticks: {
+                       beginAtZero:true
+                   }
+               }]
+           }
+       }
+   });
+   </script>
+ 
+   <hr>
