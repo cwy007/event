@@ -10,6 +10,10 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
+# Indexes
+#
+#  index_tickets_on_event_id  (event_id)
+#
 
 class Ticket < ApplicationRecord
   validates_presence_of :name, :price

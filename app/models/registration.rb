@@ -16,6 +16,13 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+# Indexes
+#
+#  index_registrations_on_event_id   (event_id)
+#  index_registrations_on_ticket_id  (ticket_id)
+#  index_registrations_on_user_id    (user_id)
+#  index_registrations_on_uuid       (uuid) UNIQUE
+#
 
 class Registration < ApplicationRecord
   STATUS = ["pending", "confirmed"]
