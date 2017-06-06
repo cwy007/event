@@ -37,6 +37,9 @@ class Event < ApplicationRecord
    self.friendly_id
  end
 
+ scope :only_public, -> { where( :status => "public" ) }
+ scope :only_available, -> { where( :status => ["public", "private"] ) }
+
 protected
 
 def generate_friendly_id
