@@ -13,6 +13,7 @@
 #  category_id :integer
 #  row_order   :integer
 #  logo        :string
+#  images      :string
 #
 # Indexes
 #
