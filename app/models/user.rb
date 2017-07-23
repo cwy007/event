@@ -30,6 +30,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  ROLES = ["admin", "editor"]
+        
   def display_name
     self.email.split("@").first
   end
