@@ -44,6 +44,10 @@ gem 'mini_magick'
 
 gem 'paper_trail'
 
+gem 'rubyzip'
+gem 'axlsx'
+gem 'axlsx_rails'
+
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
