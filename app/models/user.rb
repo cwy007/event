@@ -16,6 +16,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  time_zone              :string
+#  role                   :string
 #
 # Indexes
 #
