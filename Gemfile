@@ -42,6 +42,7 @@ gem 'ransack'
 gem 'carrierwave'
 gem 'mini_magick'
 
+gem 'paper_trail'
 
 
 # Use sqlite3 as the database for Active Record
