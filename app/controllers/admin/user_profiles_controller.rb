@@ -1,5 +1,6 @@
 class Admin::UserProfilesController < AdminController
   before_action :find_user_and_profile
+  before_action :require_admin!
 
   def edit
   end
@@ -21,6 +22,6 @@ class Admin::UserProfilesController < AdminController
 
   def profile_params
     params.require(:profile).permit(:legal_name, :birthday, :location, :education, :occupation, :bio, :specialty)
-  end 
+  end
 
 end
