@@ -48,6 +48,7 @@ gem 'rubyzip'
 gem 'axlsx'
 gem 'axlsx_rails'
 
+gem 'premailer-rails'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -85,7 +86,7 @@ end
 group :development do
   gem 'faker'
   gem 'letter_opener'
-  
+
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
