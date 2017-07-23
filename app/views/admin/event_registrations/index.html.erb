@@ -78,7 +78,7 @@
   <% @registrations.each do |registration| %>
     <tr>
       <td><%= registration.id %></td>
-      <td><%= registration.ticket.name %></td>
+      <td><%= registration.ticket.try(:name)%></td>
       <td><%= registration.name %></td>
       <td><%= t(registration.status, :scope => "registration.status") %></td>
       <td><%= registration.email %></td>
