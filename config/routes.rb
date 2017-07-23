@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     resources :versions do
       post :undo
     end
-    
+
     resources :events do
       resources :tickets, :controller => "event_tickets"
       resources :registrations, :controller => "event_registrations"
