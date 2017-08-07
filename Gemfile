@@ -80,6 +80,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'mysql2'
 
+gem 'whenever', :require => false
+
 group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano-passenger'
