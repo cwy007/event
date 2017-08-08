@@ -85,5 +85,9 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.active_job.queue_adapter = :sidekiq
+
+  config.action_mailer.default_url_options = { :host => '47.92.144.121' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = config_for(:email).symbolize_keys
   
 end
